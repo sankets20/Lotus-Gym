@@ -1,11 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/ban-types */
-/* src/types/global.d.ts
-   Minimal ambient declarations to satisfy TypeScript in CI.
-   These are intentionally permissive to unblock builds.
-   Replace with proper types later if you want stricter checking.
-*/
+
 
 declare module "recharts";
 declare module "react-day-picker";
@@ -20,32 +13,26 @@ declare module "*?raw";
 
 /**
  * Embla carousel (embla-carousel-react)
+ * Use `any` here so code that spreads/calls embla methods compiles reliably.
  */
 declare module "embla-carousel-react" {
   export type UseEmblaCarouselType = [
     (el: HTMLElement | null) => void,
-    {
-      destroy?: (...args: unknown[]) => unknown;
-      reInit?: (...args: unknown[]) => unknown;
-      slidesToScroll?: number;
-      [key: string]: unknown;
-    } | null
+    // permissive `any` to allow method calls, property access, and spreading
+    any
   ];
 
-  export default function useEmblaCarousel(
-    options?: unknown,
-    plugins?: unknown[]
-  ): UseEmblaCarouselType;
+  // default hook export
+  export default function useEmblaCarousel(options?: any, plugins?: any[]): UseEmblaCarouselType;
 
+  // named export (if used)
   export { useEmblaCarousel };
 }
 
 /**
  * input-otp package
  *
- * NOTE: We avoid `extends import("react").HTMLAttributes<HTMLElement>` because
- * some parsers choke on import() in an extends clause. This keeps the shape
- * permissive while avoiding parser errors in CI.
+ * Kept permissive to avoid parser issues in CI.
  */
 declare module "input-otp" {
   export type InputOTPSlots = Record<string, unknown>;
@@ -55,7 +42,6 @@ declare module "input-otp" {
     value?: string;
     onChange?: (value: string) => void;
     slots?: InputOTPSlots;
-    // allow other html-like props without using `extends` to avoid parser issues
     [key: string]: unknown;
   }
 
@@ -73,7 +59,6 @@ declare module "input-otp" {
 
 /**
  * Generic global augmentation.
- * Helps TS allow object spreads on unknown values.
  */
 declare global {
   type LooseObject = Record<string, unknown>;
