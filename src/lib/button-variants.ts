@@ -25,3 +25,6 @@ export const buttonVariants = cva(
     },
   },
 );
+
+
+export default buttonVariants;
