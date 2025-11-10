@@ -9,7 +9,8 @@
 // import Contact from '@/components/Contact';
 // import Footer from '@/components/Footer';
 
-import { Contact } from "lucide-react";
+
+import Contact from "@/components/Contact";
 import About from "../components/About";
 import Events from "../components/Events";
 import Facilities from "../components/Facilities";
@@ -18,7 +19,8 @@ import Navbar from "../components/Navbar";
 import Plans from "../components/Plans";
 import Testimonials from "../components/Testimonials";
 import WhyChoose from "../components/WhyChoose";
-import { Footer } from "react-day-picker";
+import Footer from "../components/Footer";
+
 
 const Index = () => {
   return (
