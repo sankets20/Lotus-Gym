@@ -14,14 +14,14 @@ const Events = () => {
 
   const events = [
     {
-      title: '🎉Anniversary Celebration 2024',
+      title: 'Anniversary Celebration 2024',
       subtitle: 'Lotus Gym Turns One!',
       description:
         'A grand celebration with all our members, featuring fitness awards, fun activities, and a special dinner night.',
       img: IMG_2,
     },
     {
-      title: '🎉Lotus Gym Anniversary Moments 2024 ',
+      title: 'Lotus Gym Anniversary Moments 2024 ',
       subtitle: 'Celebrating Strength, Unity & a Year of Dedication',
       description:
         'From fun activities and workouts to laughter-filled memories with our gym family, the evening was filled with energy, emotion, and pride.',
@@ -42,7 +42,7 @@ const Events = () => {
       img: IMG_4,
     },
     {
-      title: '😄 Fun Moments at Lotus Gym',
+      title: 'Fun Moments at Lotus Gym',
       subtitle: 'Because Fitness is More Fun Together!',
       description:
         'From friendly challenges and group workouts to laughter-filled moments between sets, every day at the gym brings something to smile about.',
