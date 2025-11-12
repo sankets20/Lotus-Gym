@@ -8,6 +8,7 @@ import IMG_2 from '@/assets/IMG_2.jpg';
 import IMG_3 from '@/assets/IMG_3.jpg';
 import IMG_4 from '@/assets/IMG_4.jpg';
 import IMG_5 from '@/assets/IMG_5.jpg';
+import IMG_6 from '@/assets/IMG_6.jpg';
 
 const Events = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -48,13 +49,20 @@ const Events = () => {
         'From friendly challenges and group workouts to laughter-filled moments between sets, every day at the gym brings something to smile about.',
       img: IMG_5,
     },
+        {
+      title: 'Women’s Arm Wrestling Competition 2025',
+      subtitle: 'Empowering Strength Inside and Out',
+      description:
+        'At Lotus Gym, we believe that strength has no gender. Our Women’s Arm Wrestling Competition 2024 was organized to inspire confidence, celebrate power, and encourage every woman to embrace her inner athlete.',
+      img: IMG_6,
+    },
   ];
 
   // ✅ Auto-slide effect (every 5 seconds)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % events.length);
-    }, 5000); // 5 seconds
+    }, 3000); // 5 seconds
 
     return () => clearInterval(interval);
   }, [events.length]);

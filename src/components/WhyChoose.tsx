@@ -1,21 +1,28 @@
+import IMAGE_1 from '@/assets/IMAGE_4.jpg';
+import IMAGE_2 from '@/assets/IMAGE_2.jpg';
+import IMAGE_3 from '@/assets/IMAGE_3.jpg';
+
 const WhyChoose = () => {
   const reasons = [
     {
       title: 'Modern Equipment & Clean Environment',
       description:
         'At Lotus Gym, we focus on providing a premium workout experience. Our gym features modern, high-quality fitness machines and a clean, spacious environment that keeps you motivated every single day. From cardio to strength training, everything is designed to help you perform your best.',
+      image: IMAGE_1,
       imagePosition: 'right',
     },
     {
       title: 'Personal Guidance & Basic Diet Support',
       description:
         'We believe that proper guidance makes all the difference. At Lotus Gym, you’ll always find support whether it’s learning correct workout techniques or getting basic diet tips for your goals.Our friendly team ensures you train smart, safe, and effectively.',
+      image: IMAGE_2,
       imagePosition: 'left',
     },
     {
       title: 'Friendly & Supportive Fitness Community',
       description:
         'Lotus Gym isn’t just a place to work out it’s a fitness community that motivates each other to grow stronger. Our members celebrate progress, share energy, and create a positive environment that keeps you consistent and confident every day.',
+      image: IMAGE_3,
       imagePosition: 'right',
     },
   ];
@@ -48,9 +55,13 @@ const WhyChoose = () => {
                 </p>
               </div>
 
-              {/* Image Placeholder */}
+              {/* ✅ Image Section */}
               <div className="flex-1 w-full">
-                <div className="aspect-video bg-gradient-to-br from-gym-navy to-gym-navy/80 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"></div>
+                <img
+                  src={reason.image}
+                  alt={reason.title}
+                  className="w-full aspect-video object-cover rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                />
               </div>
             </div>
           ))}
